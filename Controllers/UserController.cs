@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DevPloyClasses.Models;
 using DevPloyClasses.Dto.UserDtos;
-using AgentBuilderApi.Services.UserServices;
+using DevPloyApiApi.Services.UserServices;
 
-namespace AgentBuilderApi.Controllers
+namespace DevPloyApiApi.Controllers
 {
-    /// <summary>
     /// TODO: Implement Error Handeling
     /// TODO: Add GoogleAuth and other third part Auth
+    /// TODO: Check the controller returns
+    /// <summary>
     /// </summary>
     [ApiController]
     [Route("[controller]")]
@@ -19,12 +20,13 @@ namespace AgentBuilderApi.Controllers
             this._userService = userService;
         }
 
-        /// <summary>
         /// TODO: need to implement OTP message
-        /// Try to validate user acces
+        /// <summary>
+        /// Try to validate user acces 
         /// </summary>
-        /// <param name="user">UserLogIn data tranfert obj</param>
-        /// <returns>if user validated return JWT</returns>
+        /// <param name="user">according to UserLogInDto</param>
+        /// <returns>if user validated return JWT , will return otp soon</returns>
+        /// <response code="500">If there is an internal server error</response>
         [HttpPost("Log_User")]
         public async Task<ActionResult<ServiceResponse<string>>> LogUser(UserDtoLogIn user)
         {
@@ -40,11 +42,11 @@ namespace AgentBuilderApi.Controllers
         }
 
         /// <summary>
-        /// We get the basic required info from client taking care to keep separated uncripted pasword
+        /// Gets user account details according in order to register
         /// </summary>
-        /// <param name="user"></param>
-        /// <param name="pasword"></param>
-        /// <returns></returns>
+        /// <param name="user">according to class library UserDtoRegister</param>
+        /// <returns>user registration message, will return otp soon</returns>
+        /// /// <response code="500">If there is an internal server error</response>
         [HttpPost("Register_User")]
         public async Task<ActionResult<ServiceResponse<string>>> PostUser(UserDtoRegister user)
         {

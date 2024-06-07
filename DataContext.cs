@@ -1,8 +1,7 @@
 ﻿using DevPloyClasses.Models;
-using DevPloyClasses.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AgentBuilderApi
+namespace DevPloyApiApi
 {
     public class DataContext : DbContext
     {

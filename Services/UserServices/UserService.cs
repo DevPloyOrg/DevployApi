@@ -5,7 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace AgentBuilderApi.Services.UserServices
+namespace DevPloyApiApi.Services.UserServices
 {
     public enum UserStatus
     {   
@@ -61,14 +61,6 @@ namespace AgentBuilderApi.Services.UserServices
 
                             if (logged)
                             {
-                                //HINT: Sospendo implementazione OTP
-                                //response.Data = CreateToken(logged_user);
-                                //var otp = GenerateOtp();
-
-                                //logged_user.Otp = otp;
-                                //logged_user.OtpExpiry = DateTime.UtcNow.AddMinutes(5);
-                                //await _dataContext.SaveChangesAsync();
-
                                 response.Data =CreateToken(logged_user);
                                 response.Succes = true;
                                 response.Message = $"User with Id:{logged_user.Id} creedential verified";

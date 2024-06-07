@@ -1,7 +1,7 @@
 ﻿using DevPloyClasses.Dto.UserDtos;
 using DevPloyClasses.Models;
 
-namespace AgentBuilderApi.Services.UserServices
+namespace DevPloyApiApi.Services.UserServices
 {
     /// <summary>
     /// User service interface mandatory for Dipendency Injection

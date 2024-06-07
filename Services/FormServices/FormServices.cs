@@ -1,6 +1,4 @@
-﻿using AgentBuilderApi;
-using AgentBuilderApi.Services.UserServices;
-using DevPloyClasses.Dto.FormsDto;
+﻿using DevPloyClasses.Dto.FormsDto;
 using DevPloyClasses.Models;
 
 namespace DevPloyApiApi.Services.FormServices
@@ -41,11 +39,17 @@ namespace DevPloyApiApi.Services.FormServices
                     StartDate = compiled_form.StartDate,
                     AdditionalInformation = compiled_form.AdditionalInformation
                 };
-            }
-            catch (Exception)
-            {
 
-                throw;
+                _dataContext.AdvancedForms.Add(newForm);
+                await _dataContext.SaveChangesAsync();
+                response.Succes = true;
+                response.Data = true;
+                response.Message = "Form posted on DB";
+            }
+            catch (Exception ex)
+            {
+                response.Message = $"Failed ty post form on DB {ex.Message}";
+                response.Succes = false;
             }
 
             return response;
@@ -68,11 +72,17 @@ namespace DevPloyApiApi.Services.FormServices
                     SkillExperience = compiled_form.SkillExperience,
                     ProgrammingLanguages = compiled_form.ProgrammingLanguages
                 };
-            }
-            catch (Exception)
-            {
 
-                throw;
+                _dataContext.BaseForms.Add(newForm);
+                await _dataContext.SaveChangesAsync();
+                response.Succes = true;
+                response.Data = true;
+                response.Message = "Form posted on DB";
+            }
+            catch (Exception ex)
+            {
+                response.Message = $"Failed ty post form on DB {ex.Message}";
+                response.Succes = false;
             }
 
             return response;
