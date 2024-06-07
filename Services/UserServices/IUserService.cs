@@ -1,5 +1,5 @@
-﻿using AgentBuilderClasses.Dto.UserDtos;
-using AgentBuilderClasses.Models;
+﻿using DevPloyClasses.Dto.UserDtos;
+using DevPloyClasses.Models;
 
 namespace AgentBuilderApi.Services.UserServices
 {

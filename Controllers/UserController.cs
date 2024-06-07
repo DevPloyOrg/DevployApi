@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using AgentBuilderClasses.Models;
-using AgentBuilderClasses.Dto.UserDtos;
+using DevPloyClasses.Models;
+using DevPloyClasses.Dto.UserDtos;
 using AgentBuilderApi.Services.UserServices;
 
 namespace AgentBuilderApi.Controllers
